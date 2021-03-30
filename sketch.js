@@ -3,9 +3,7 @@ const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Constraint = Matter.Constraint;
 
-var box1, box2, box3, box4, box5;
-var box6, box7, box8, box9, box10;
-var boll, string;
+var myEngine, myWorld, ground;
 
 function setup () {
 
@@ -14,21 +12,29 @@ function setup () {
     myEngine = Engine.create();
     myWorld = myEngine.World;
 
-    box1 = new box();
-    box2 = new box();
-    box3 = new box();
-    box4 = new box();
-    box5 = new box();
-    box6 = new box();
-    box7 = new box();
-    box8 = new box();
-    box9 = new box();
-    box10 = new box();
-
+    box1 = new Box(600,555);
+    box2 = new Box(600,485);
+    box3 = new Box(600,415);
+    box4 = new Box(600,345);
+    box5 = new Box(600,275);
+    box6 = new Box(600,205);
+    box7 = new Box(600,135);
+    
+    ground = new Ground(600,590,1200,20);
 }
 
 function draw() {
 
-    background("light blue");
+    background("lightblue");
+    Engine.update(myEngine);
+
+    box1.display();
+    box2.display();
+    box3.display();
+    box4.display();
+    box5.display();
+    box6.display();
+    box7.display();
+    ground.display();
 
 }
