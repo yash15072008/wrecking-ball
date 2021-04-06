@@ -1,4 +1,4 @@
-class Box{
+class Ball{
 
     constructor(x,y) {
         var box = {
@@ -8,9 +8,9 @@ class Box{
 
         }
 
-        this.body = Bodies.rectangle(x,y,70,70,box);
-        this.width = 70;
-        this.height = 70;
+        this.body = Bodies.rectangle(x,y,50,50,box);
+        this.width = 50;
+        this.height = 50;
 
         World.add(myWorld,this.body);
     }
@@ -23,9 +23,9 @@ class Box{
         strokeWeight(4);
         translate(pos.x,pos.y);
         rotate(angle);
-        fill("red");
-        rectMode(CENTER);
-        rect(0,0,this.width,this.height);
+        fill("blue");
+        ellipseMode(RADIUS);
+        ellipse(0,0,this.width,this.height);
         pop();
 
     }
